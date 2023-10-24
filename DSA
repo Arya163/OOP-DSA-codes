@@ -1,1 +1,21 @@
-d
+def search_binary(a,first,last,temp):
+    if last >= first:
+        avg =(first + last)//2
+        if a[avg] ==temp:
+            return avg
+        elif a[avg] > temp:
+            return search_binary(a,first,avg-1,temp)
+        else:
+            return search_binary(a,avg+1,last,temp)
+
+    else:
+        return-1
+a=[12,24,48,98,104]
+temp=48
+
+output=search_binary(a,0,len(a)-1,temp)
+
+if output != -1:
+    print("Element is present at index ",str(output))
+else:
+    print("Element is not present in array")
